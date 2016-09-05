@@ -5,11 +5,11 @@
       <img class="logo" src="./images/header/LOGO_BD.svg">
     </div>
     <div class="col-xs-5 text-right">
-      <button class="btn btn-default" (click)="lgModal.show()" type="button">
+      <button class="btn btn-default" (click)="loginModal.show()" type="button">
         <span class="glyphicon glyphicon-log-in"></span>
         <span class="message">เข้าสู่ระบบ</span>
       </button>
-      <button class="btn btn-danger" (click)="lgModal.show()" type="button">
+      <button class="btn btn-danger" (click)="registerModal.show()" type="button">
         <span class="glyphicon glyphicon-user"></span>
         <span class="message">สมัครสมาชิก</span>
       </button>
@@ -21,30 +21,64 @@
 <router-outlet></router-outlet>
 
 
-<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div bsModal #loginModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+        <button type="button" class="close" (click)="loginModal.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Large modal</h4>
+        <h2 class="modal-title text-center">เข้าสู่ระบบ</h2>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="IpLoginEmail">ที่อยู่อีเมล</label>
+            <input type="email" class="form-control" id="IpLoginEmail" placeholder="@">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="IpLoginPassword">รหัสผ่าน</label>
+            <input type="password" class="form-control" id="IpLoginPassword">
           </div>
-          <button type="button" class="btn btn-success">
-            <span class="glyphicon glyphicon-send"></span> 
-            สมัครสมาชิก
-          </button>
-          <button type="button" class="btn btn-default">เข้าสู่ระบบ</button>
+          <div class="button-space text-center">
+            <button type="button" class="btn btn-success">
+              <span class="glyphicon glyphicon-send"></span>
+              เข้าสู่ระบบ
+            </button>
+            <button type="button" (click)="registerModal.show(); loginModal.hide()" class="btn btn-default">ยังไม่มีบัญชี ?</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #registerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="registerModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title text-center">สมัครสมาชิก</h2>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="IpLoginEmail">ที่อยู่อีเมล</label>
+            <input type="email" class="form-control" id="IpLoginEmail" placeholder="@">
+          </div>
+          <div class="form-group">
+            <label for="IpLoginPassword">รหัสผ่าน</label>
+            <input type="password" class="form-control" id="IpLoginPassword">
+          </div>
+          <div class="button-space text-center">
+            <button type="button" class="btn btn-danger">
+              <span class="glyphicon glyphicon-send"></span>
+              สมัครสมาชิก
+            </button>
+            <button type="button" (click)="loginModal.show(); registerModal.hide()" class="btn btn-default">เป็นสมาชิกแล้ว ?</button>
+          </div>
         </form>
       </div>
     </div>

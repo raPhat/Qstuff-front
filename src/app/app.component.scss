@@ -43,9 +43,22 @@ body {
     box-shadow: none;
     border: none;
   }
+  h2.modal-title {
+    font-weight: bold;
+  }
 }
 .modal-backdrop {
   z-index: 10000;
+}
+
+hr.break {
+  height: 1px;
+  color: rgba(9,9,9,0.05);
+}
+
+label {
+  font-family: 'th_sarabun';
+  font-size: 18px;
 }
 
 input.form-control {
@@ -69,7 +82,7 @@ input.form-control {
   }
   &.btn-danger {
     background-color: #FF3333;
-    border-color: #984949;
+    border-color: #c86060;
     &:hover {
       background-color: #d72727;
     }
@@ -378,4 +391,8 @@ ul.list-chapter {
       }
     }
   }
+}
+
+.button-space {
+  margin: 20px 0;
 }
