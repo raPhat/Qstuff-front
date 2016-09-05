@@ -7,13 +7,20 @@
 /***********************************************************************************************
  * User Configuration.
  **********************************************************************************************/
-/** Map relative paths to URLs. */
-const map: any = {
-};
+ /** Map relative paths to URLs. */
+ const map: any = {
+     'moment': 'vendor/moment/moment.js',
+     'ng2-bootstrap': 'vendor/ng2-bootstrap',
+ };
 
-/** User packages configuration. */
-const packages: any = {
-};
+ /** User packages configuration. */
+ const packages: any = {
+   'ng2-bootstrap': {
+     format: 'cjs',
+     defaultExtension: 'js',
+     main: 'ng2-bootstrap.js'
+   }
+ };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -36,6 +43,8 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/homepage',
+  'app/notfoundpage',
   /** @cli-barrel */
 ];
 

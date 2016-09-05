@@ -10,10 +10,11 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <app-root>Loading...</app-root>
-  
+
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
@@ -22,6 +23,17 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-  
+
+
+    <script>
+      window.onscroll = function() {
+        if(document.body.scrollTop > 10) {
+          document.querySelector('#header').classList.remove('top');
+        } else {
+          document.querySelector('#header').classList.add('top');
+        }
+      };
+    </script>
+
 </body>
 </html>
