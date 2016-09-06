@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Istory } from '../stories/Istory';
+import { StoryService } from '../cards/story/story.service';
 
 @Component({
     moduleId: module.id,
@@ -11,11 +13,13 @@ export class HomepageComponent implements OnInit {
     public noWrapSlides: boolean = false;
     public slides: Array<any> = [];
 
-    public constructor() {
-        for (let i = 0; i < 4; i++) {
-            this.addSlide();
-        }
-    }
+    vt: String = "card-longstory";
+
+    stories: Istory[];
+
+    public constructor(
+        private storyService: StoryService
+    ) {}
 
     public addSlide(): void {
         let newWidth = 600 + this.slides.length + 1;
@@ -27,6 +31,11 @@ export class HomepageComponent implements OnInit {
     }
 
     ngOnInit() {
+        for (let i = 0; i < 4; i++) {
+            this.addSlide();
+        }
+        this.stories = this.storyService.getStories();
     }
+
 
 }

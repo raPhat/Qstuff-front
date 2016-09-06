@@ -2,10 +2,11 @@
 
 import { addProviders, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ViewContainerRef, ViewEncapsulation, Component } from '@angular/core';
 
 describe('App: QstuffClient', () => {
   beforeEach(() => {
-    addProviders([AppComponent]);
+    addProviders([AppComponent,ViewContainerRef]);
   });
 
   it('should create the app',

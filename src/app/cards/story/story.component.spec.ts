@@ -3,12 +3,11 @@
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
-import { HomepageComponent } from './homepage.component';
-import { StoryService } from '../cards/story/story.service';
+import { StoryComponent } from './story.component';
 
-describe('Component: Homepage', () => {
+describe('Component: Story', () => {
   it('should create an instance', () => {
-    let component = new HomepageComponent(new StoryService);
+    let component = new StoryComponent();
     expect(component).toBeTruthy();
   });
 });

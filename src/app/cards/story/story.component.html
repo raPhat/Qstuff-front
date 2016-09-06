@@ -1,0 +1,41 @@
+<div class="card" [ngClass]="story.type">
+  <div class="card-side cover" [ngStyle]="{'background-image': 'url(' + story.cover + ')'}">
+    <div class="statistic">
+      <div class="view">
+        <span class="number">650</span>
+        <span class="text">ดู</span>
+      </div>
+      <div class="like">
+        <span class="number">15</span>
+        <span class="text">ชอบ</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-side content">
+    <a href="#">
+      <div class="content-story">
+        <h4 class="title">{{ story.title }}a</h4>
+        <p class="description">{{ story.description }}</p>
+      </div>
+    </a>
+    <ul class="list-chapter">
+      <a href="#" *ngFor="#chapter of getChapters(); #i = index">
+        <li [ngClass]="chapter.class">
+          <span *ngIf="!chapter.class">#{{ chapter.no }}: {{ chapter.title }}</span>
+          <span class="glyphicon glyphicon-option-horizontal" *ngIf="chapter.class"></span>
+        </li>
+      </a>
+    </ul>
+    <div class="date-line">
+      <div class="date-text">1 สิงหาคม 2559</div>
+    </div>
+    <div class="writer-shortcut">
+      <div class="avatar"
+      style="background-image: url('./images/mock/avatar.jpg')"></div>
+      <div class="allName">
+        <div class="penname">ร ภัทร</div>
+        <div class="nickname">เทพเจ้าบทความ</div>
+      </div>
+    </div>
+  </div>
+</div>

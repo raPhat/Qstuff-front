@@ -6,6 +6,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundpageComponent } from './notfoundpage/notfoundpage.component';
+import { StoryComponent } from './cards/story/';
+import { StoryService } from './cards/story/story.service';
 import { CarouselModule, ModalModule, AlertModule, DatepickerModule } from 'ng2-bootstrap';
 
 @NgModule({
@@ -21,11 +23,13 @@ import { CarouselModule, ModalModule, AlertModule, DatepickerModule } from 'ng2-
         AppComponent,
         HomepageComponent,
         NotfoundpageComponent,
+        StoryComponent,
         ROUTER_DIRECTIVES
     ],   // components and directives
     bootstrap: [AppComponent],     // root component
     providers: [
-        appRouterProviders
+        appRouterProviders,
+        StoryService
     ]                    // services
 })
 export class AppModule { }
