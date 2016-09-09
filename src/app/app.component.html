@@ -1,10 +1,10 @@
 
 <header id="header" class="main-header top">
   <div class="container">
-    <div class="col-xs-2 col-xs-offset-5 text-center">
-      <img class="logo" src="./images/header/LOGO_BD.svg">
+    <div class="col-xs-2 col-xs-offset-5 offset-md-5 text-center text-xs-center">
+      <a routerLink="/"><img id="logo" class="logo" src="./images/header/LOGO_BD.svg"></a>
     </div>
-    <div class="col-xs-5 text-right">
+    <div class="col-xs-5 text-right text-xs-right" [hidden]="isLoggedIn">
       <button class="btn btn-default" (click)="loginModal.show()" type="button">
         <span class="glyphicon glyphicon-log-in"></span>
         <span class="message">เข้าสู่ระบบ</span>
@@ -14,12 +14,35 @@
         <span class="message">สมัครสมาชิก</span>
       </button>
     </div>
+    <div class="col-xs-5 text-right text-xs-right" [hidden]="!isLoggedIn">
+      <div class="btn-group" dropdown [(isOpen)]="status.isopen">
+        <div id="single-button" class="btn-dropdown" dropdownToggle>
+          <div class="writer-shortcut">
+            <div class="avatar" style="background-image: url('./images/mock/avatar.jpg')"></div>
+            <div class="allName">
+              <div class="penname">ร ภัทร</div>
+              <div class="nickname">เทพเจ้าบทความ</div>
+            </div>
+          </div>
+        </div>
+        <ul dropdownMenu role="menu" aria-labelledby="single-button">
+          <li role="menuitem"><a class="dropdown-item">Action</a></li>
+          <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+          <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" (click)="logout()">ออกจากระบบ</a></li>
+        </ul>
+      </div>
+      <!-- <button class="btn btn-default" (click)="logout()" type="button">
+      <span class="glyphicon glyphicon-log-out"></span>
+      <span class="message"></span>
+    </button> -->
   </div>
+</div>
 </header>
 
 <!-- Routed views go here -->
 <router-outlet></router-outlet>
-
 
 <div bsModal #loginModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -31,23 +54,8 @@
         <h2 class="modal-title text-center">เข้าสู่ระบบ</h2>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="IpLoginEmail">ที่อยู่อีเมล</label>
-            <input type="email" class="form-control" id="IpLoginEmail" placeholder="@">
-          </div>
-          <div class="form-group">
-            <label for="IpLoginPassword">รหัสผ่าน</label>
-            <input type="password" class="form-control" id="IpLoginPassword">
-          </div>
-          <div class="button-space text-center">
-            <button type="button" class="btn btn-success">
-              <span class="glyphicon glyphicon-send"></span>
-              เข้าสู่ระบบ
-            </button>
-            <button type="button" (click)="registerModal.show(); loginModal.hide()" class="btn btn-default">ยังไม่มีบัญชี ?</button>
-          </div>
-        </form>
+        <form-login [modal]="loginModal"></form-login>
+        <button type="button" (click)="registerModal.show(); loginModal.hide()" class="btn btn-default btn-block">ยังไม่มีบัญชี ?</button>
       </div>
     </div>
   </div>

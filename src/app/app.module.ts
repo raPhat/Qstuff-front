@@ -8,7 +8,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NotfoundpageComponent } from './notfoundpage/notfoundpage.component';
 import { StoryComponent } from './cards/story/';
 import { StoryService } from './cards/story/story.service';
-import { CarouselModule, ModalModule, AlertModule, DatepickerModule } from 'ng2-bootstrap';
+import { LoginComponent } from './auth/login/';
+import { AuthService } from './auth/auth.service';
+import { FixedComponent } from './fixed/';
+import { AuthManagerService } from './auth/auth-manager.service';
+import { AuthActivateService } from './auth/auth-activate.service';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { CarouselModule, ModalModule, AlertModule, DatepickerModule, DropdownModule } from 'ng2-bootstrap';
 
 @NgModule({
     imports: [
@@ -17,19 +24,27 @@ import { CarouselModule, ModalModule, AlertModule, DatepickerModule } from 'ng2-
         AlertModule,
         DatepickerModule,
         ModalModule,
-        CarouselModule
+        CarouselModule,
+        DropdownModule
     ],       // module dependencies
     declarations: [
         AppComponent,
         HomepageComponent,
         NotfoundpageComponent,
         StoryComponent,
+        LoginComponent,
+        FixedComponent,
+        LoginpageComponent,
+        ProfilepageComponent,
         ROUTER_DIRECTIVES
     ],   // components and directives
     bootstrap: [AppComponent],     // root component
     providers: [
         appRouterProviders,
-        StoryService
+        StoryService,
+        AuthService,
+        AuthManagerService,
+        AuthActivateService
     ]                    // services
 })
 export class AppModule { }

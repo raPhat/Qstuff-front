@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Istory } from '../../stories/istory';
+import { Istory } from './istory';
 
 @Component({
   moduleId: module.id,
@@ -28,5 +28,25 @@ export class StoryComponent implements OnInit {
     }
     return this.story.chapters;
   }
+
+  getCol(): String {
+    if( this.story.type == 'longStory' ) {
+      return "col-md-5";
+    } else if( this.story.type == 'shortStory' ) {
+      return "col-md-4";
+    } else {
+      return "col-md-3";
+    }
+  }
+
+    getLink(): String {
+      if( this.story.type == 'longStory' ) {
+        return "/story/"+this.story.id;
+      } else if( this.story.type == 'shortStory' ) {
+        return "/read/"+this.story.r_id;
+      } else {
+        return "/story/"+this.story.id;
+      }
+    }
 
 }

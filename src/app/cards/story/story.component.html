@@ -12,14 +12,14 @@
     </div>
   </div>
   <div class="card-side content">
-    <a href="#">
+    <a [routerLink]="[getLink()]">
       <div class="content-story">
-        <h4 class="title">{{ story.title }}a</h4>
+        <h4 class="title">{{ story.title }}</h4>
         <p class="description">{{ story.description }}</p>
       </div>
     </a>
     <ul class="list-chapter">
-      <a href="#" *ngFor="#chapter of getChapters(); #i = index">
+      <a [routerLink]="['/read/'+chapter.id]" *ngFor="let chapter of getChapters(); let i = index">
         <li [ngClass]="chapter.class">
           <span *ngIf="!chapter.class">#{{ chapter.no }}: {{ chapter.title }}</span>
           <span class="glyphicon glyphicon-option-horizontal" *ngIf="chapter.class"></span>
@@ -30,8 +30,7 @@
       <div class="date-text">1 สิงหาคม 2559</div>
     </div>
     <div class="writer-shortcut">
-      <div class="avatar"
-      style="background-image: url('./images/mock/avatar.jpg')"></div>
+      <div class="avatar" style="background-image: url('./images/mock/avatar.jpg')"></div>
       <div class="allName">
         <div class="penname">ร ภัทร</div>
         <div class="nickname">เทพเจ้าบทความ</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Istory } from '../stories/Istory';
+import { Istory } from '../cards/story/istory';
 import { StoryService } from '../cards/story/story.service';
 
 @Component({
@@ -13,8 +13,6 @@ export class HomepageComponent implements OnInit {
     public noWrapSlides: boolean = false;
     public slides: Array<any> = [];
 
-    vt: String = "card-longstory";
-
     stories: Istory[];
 
     public constructor(
@@ -25,8 +23,7 @@ export class HomepageComponent implements OnInit {
         let newWidth = 600 + this.slides.length + 1;
         this.slides.push({
             image: `//placekitten.com/${newWidth}/300`,
-            text: `${['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4]}
-        ${['Cats', 'Kittys', 'Felines', 'Cutes'][this.slides.length % 4]}`
+            text: `${['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4]}`
         });
     }
 

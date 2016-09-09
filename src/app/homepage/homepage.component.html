@@ -1,3 +1,5 @@
+
+
 <div class="qheader">
   <div class="qbook">
 
@@ -18,81 +20,9 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6" *ngFor="#story of stories">
+    <div class="col-md-6" *ngFor="let story of stories">
       <card-story [story]="story"></card-story>
     </div>
 
-    <!-- <div class="col-md-6">
-      <div class="card shortStory">
-        <div class="cover" style="background-image: url('./images/mock/snow-covered-1246246_640.jpg')">
-          <div class="statistic">
-            <div class="view">
-              <span class="number">650</span>
-              <span class="text">ดู</span>
-            </div>
-            <div class="like">
-              <span class="number">15</span>
-              <span class="text">ชอบ</span>
-            </div>
-          </div>
-        </div>
-        <div class="content">
-          <a href="#">
-            <div class="content-story">
-              <h4 class="title">PERFUME: เสาวธาร</h4>
-              <p class="description">Nam nibh. Nunc varius facilisis eros. Sederat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer.</p>
-            </div>
-          </a>
-          <div class="date-line">
-            <div class="date-text">1 สิงหาคม 2559</div>
-          </div>
-          <div class="writer-shortcut">
-            <div class="avatar" style="background-image: url('./images/mock/avatar.jpg')"></div>
-            <div class="allName">
-              <div class="penname">ร ภัทร</div>
-              <div class="nickname">เทพเจ้าบทความ</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card photo" style="background-image: url('./images/mock/travel-1564734_640.jpg')">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card shortStory">
-        <div class="cover" style="background-image: url('./images/mock/snow-covered-1246246_640.jpg')">
-          <div class="statistic">
-            <div class="view">
-              <span class="number">650</span>
-              <span class="text">ดู</span>
-            </div>
-            <div class="like">
-              <span class="number">15</span>
-              <span class="text">ชอบ</span>
-            </div>
-          </div>
-        </div>
-        <div class="content">
-          <a href="#">
-            <div class="content-story">
-              <h4 class="title">PERFUME: เสาวธาร</h4>
-              <p class="description">Nam nibh. Nunc varius facilisis eros. Sederat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer.</p>
-            </div>
-          </a>
-          <div class="date-line">
-            <div class="date-text">1 สิงหาคม 2559</div>
-          </div>
-          <div class="writer-shortcut">
-            <div class="avatar" style="background-image: url('./images/mock/avatar.jpg')"></div>
-            <div class="allName">
-              <div class="penname">ร ภัทร</div>
-              <div class="nickname">เทพเจ้าบทความ</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>

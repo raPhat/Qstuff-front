@@ -9,8 +9,9 @@
  **********************************************************************************************/
  /** Map relative paths to URLs. */
  const map: any = {
-     'moment': 'vendor/moment/moment.js',
-     'ng2-bootstrap': 'vendor/ng2-bootstrap',
+    //  'moment': 'vendor/moment/moment.js',
+    // 'moment': 'node_modules/moment/moment.js',
+     'ng2-bootstrap': 'vendor/ng2-bootstrap'
  };
 
  /** User packages configuration. */
@@ -19,7 +20,8 @@
      format: 'cjs',
      defaultExtension: 'js',
      main: 'ng2-bootstrap.js'
-   }
+   },
+  //  'moment': { main: 'moment.js', defaultExtension: 'js' }
  };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,6 +50,13 @@ const barrels: string[] = [
   'app/longstory',
   'app/cards/longstory',
   'app/cards/story',
+  'app/storypage',
+  'app/auth',
+  'app/auth/login',
+  'app/fixed',
+  'app/loginpage',
+  'app/profilepage',
+  'app/readingpage',
   /** @cli-barrel */
 ];
 
@@ -64,7 +73,9 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'moment': 'vendor/moment/moment.js'
+    // 'moment': 'vendor/moment/moment.js'
   },
   packages: cliSystemConfigPackages
 });
