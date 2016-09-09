@@ -1,0 +1,17 @@
+<form (ngSubmit)="login()">
+  <div class="form-group" [ngClass]="{'has-error': check_valid}">
+    <label class="control-label" for="IpLoginEmail">ที่อยู่อีเมล: </label>
+    <input type="email" class="form-control" [(ngModel)]="localUser.username" name="username" id="IpLoginEmail" placeholder="@">
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': check_valid}">
+    <label class="control-label" for="IpLoginPassword">รหัสผ่าน: </label>
+    <input type="password" class="form-control" [(ngModel)]="localUser.password" name="password" id="IpLoginPassword">
+    <span class="help-block" *ngIf="check_valid"><strong>ผิดพลาด:</strong> {{ message }}</span>
+  </div>
+  <div class="button-space text-center">
+    <button type="submit" class="btn btn-success btn-block">
+      <span class="glyphicon glyphicon-send"></span>
+      เข้าสู่ระบบ
+    </button>
+  </div>
+</form>

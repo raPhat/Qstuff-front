@@ -1,0 +1,61 @@
+@import "../variables.scss";
+
+.story {
+  position: relative;
+  &.longStory {
+    background-color: #fff;
+    width: 100%;
+    min-height: 450px;
+    border: 5px solid $border-color;
+    .cover {
+      position: relative;
+      float: left;
+      max-width: 350px;
+      width: 100%;
+      height: 440px;
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      background-position: center;
+      background-size: cover;
+    }
+    .content {
+      position: relative;
+      float: left;
+      max-width: calc(100% - 350px);
+      width: 100%;
+      height: 440px;
+      background-color: #FFF;
+      .detail {
+        height: 291px;
+      }
+    }
+    @media screen and (max-width: 750px) {
+      .cover, .content {
+        float: none;
+        max-width: 100%;
+      }
+    }
+  }
+}
+.statusStory {
+  padding: 5px 0;
+  background-color: $background-color;
+  border-left: 1px solid $border-color;
+  height: 440px;
+  @media screen and (max-width: 992px) {
+    background-color: $border-color;
+    .counter {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .text {
+      font-size: 20px;
+      line-height: 36px;
+    }
+    height: auto;
+  }
+}
+
+.qheader {
+  margin-bottom: 10px;
+}

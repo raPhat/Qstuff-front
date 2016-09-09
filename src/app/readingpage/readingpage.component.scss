@@ -1,0 +1,76 @@
+@import "../variables.scss";
+
+.qheader {
+  background-size: cover;
+  background-position: top;
+}
+.qcaption {
+  width: 100%;
+  min-height: 280px;
+}
+.container-reader {
+  margin-top: -150px;
+  padding: 0;
+}
+.read-qbook {
+  position: relative;
+  width: 100%;
+  padding: 10% 0;
+  .read-content {
+    // margin: 0 2.8%;
+    // width: 94.3%;
+    position: relative;
+    width: 100%;
+    padding: 50px 10%;
+    // background-image: url("./images/header/book_bg2.svg");
+    background-image: url("./images/header/book_content.png");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: repeat-y;
+    // background-color: #FFF;
+    // &::before {
+    //   content: " ";
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: -2.8%;
+    //   right: -2.8%;
+    //   background-color: $background-color;
+    // }
+    h1,h2,h3,h4,h5 {
+      font-family: 'cloud_bold';
+    }
+    p {
+      margin-bottom: 2em;
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: 750px) {
+
+    }
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5%;
+    background-image: url("./images/header/book.svg");
+    background-size: 100% auto;
+    background-position: top;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5%;
+    background-image: url("./images/header/book.svg");
+    background-size: 100% auto;
+    background-position: bottom;
+  }
+}

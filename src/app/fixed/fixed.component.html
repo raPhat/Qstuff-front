@@ -1,0 +1,76 @@
+
+<header id="header" class="main-header top">
+  <div class="container">
+    <div class="col-xs-2 col-xs-offset-5 text-center">
+      <a routerLink="/"><img id="logo" class="logo" src="./images/header/LOGO_BD.svg"></a>
+    </div>
+    <div class="col-xs-5 text-right" [hidden]="isLoggedIn">
+      <button class="btn btn-default" (click)="loginModal.show()" type="button">
+        <span class="glyphicon glyphicon-log-in"></span>
+        <span class="message">เข้าสู่ระบบ</span>
+      </button>
+      <button class="btn btn-danger" (click)="registerModal.show()" type="button">
+        <span class="glyphicon glyphicon-user"></span>
+        <span class="message">สมัครสมาชิก</span>
+      </button>
+    </div>
+    <div class="col-xs-5 text-right" [hidden]="!isLoggedIn">
+      <button class="btn btn-default" (click)="logout()" type="button">
+        <span class="glyphicon glyphicon-log-out"></span>
+        <span class="message">ออกจากระบบ</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Routed views go here -->
+<router-outlet></router-outlet>
+
+<div bsModal #loginModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="loginModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title text-center">เข้าสู่ระบบ</h2>
+      </div>
+      <div class="modal-body">
+        <form-login [modal]="loginModal"></form-login>
+        <button type="button" (click)="registerModal.show(); loginModal.hide()" class="btn btn-default btn-block">ยังไม่มีบัญชี ?</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #registerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="registerModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title text-center">สมัครสมาชิก</h2>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="IpLoginEmail">ที่อยู่อีเมล</label>
+            <input type="email" class="form-control" id="IpLoginEmail" placeholder="@">
+          </div>
+          <div class="form-group">
+            <label for="IpLoginPassword">รหัสผ่าน</label>
+            <input type="password" class="form-control" id="IpLoginPassword">
+          </div>
+          <div class="button-space text-center">
+            <button type="button" class="btn btn-danger">
+              <span class="glyphicon glyphicon-send"></span>
+              สมัครสมาชิก
+            </button>
+            <button type="button" (click)="loginModal.show(); registerModal.hide()" class="btn btn-default">เป็นสมาชิกแล้ว ?</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

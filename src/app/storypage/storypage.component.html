@@ -1,0 +1,78 @@
+
+
+<div class="qheader">
+  <div class="container headerStory">
+
+    <div class="col col-md-12">
+      <div class="story longStory">
+        <div class="cover" [ngStyle]="{'background-image': 'url(images/mock/magazine-cover-1139323_640.jpg)'}">
+
+        </div>
+        <div class="content">
+          <div class="col col-md-10 detail">
+
+
+            <div class="content-story">
+              <h4 class="title">{{ story.title }}</h4>
+              <p class="description">{{ story.description }}</p>
+            </div>
+
+          </div>
+          <div class="col col-md-2">
+            <div class="story statusStory row">
+              <div class="stat-box col col-xs-4 col-md-12">
+                <div class="text">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                </div>
+                <div class="counter">
+                  60
+                </div>
+                <div class="text">
+                  คนดู
+                </div>
+              </div>
+              <div class="stat-box blue col col-xs-4 col-md-12">
+                <div class="counter">
+                  18
+                </div>
+                <div class="text">
+                  ติดตาม<br>
+                  <button type="button" name="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="stat-box red col col-xs-4 col-md-12">
+                <div class="counter">
+                  18
+                </div>
+                <div class="text">
+                  ชอบ<br>
+                  <button type="button" name="button" class="btn btn-like">
+                    <span class="glyphicon glyphicon-heart"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="float-break"></div>
+
+<div class="container">
+  <div class="card chapterCard">
+    <ul class="list-chapter text-lg">
+      <a [routerLink]="['/read/'+chapter.id]" *ngFor="let chapter of story.chapters; let i = index">
+        <li [ngClass]="chapter.class">
+          <span *ngIf="!chapter.class">#{{ chapter.no }}: {{ chapter.title }}</span>
+          <span class="glyphicon glyphicon-option-horizontal" *ngIf="chapter.class"></span>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
